@@ -23,7 +23,7 @@ This project is a simple login and signup website with a modern user interface a
    ```bash
    git clone https://github.com/vtmag/login-signup
    
-   -Open the `index.html` file in your web browser.
+ and open the `index.html` file in your web browser.
 
 2. **Download the repository as a ZIP file:**
 
