@@ -15,6 +15,7 @@ This project aims to provide a basic authentication system where users can sign 
 - **Express**: A web application framework for Node.js that simplifies building web applications and APIs.
 - **MongoDB**: A NoSQL database used to store user information.
 - **Mongoose**: An Object Data Modeling (ODM) library for MongoDB and Node.js, used to interact with MongoDB in an easy-to-use manner.
+- **Realm App Users**: Authentication service provided by Realm to manage app users securely.
 - **HTML/CSS/JavaScript**: Frontend technologies for creating the user interface and handling client-side functionality.
 
 ## Installation
@@ -30,6 +31,7 @@ This project aims to provide a basic authentication system where users can sign 
    ```bash
    cd login-signup
    npm install
+   nmp install realm
    ```
 
 3. Set up MongoDB Atlas account and configure database connection URI in `server.js`.

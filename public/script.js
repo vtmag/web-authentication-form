@@ -120,28 +120,44 @@ translatePage('el'); // Set initial language (Greek)
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const signupForm = document.getElementById('signup-form');
-    const suButton = document.getElementsByClassName('su')[0]; // Select the first element with class 'su'
-    const siButton = document.getElementsByClassName('si')[0];
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    const signUpForm = document.getElementById('signUpForm');
+    const signUpButton1 = document.querySelector('.su');
+    const signInButton1 = document.querySelector('.si');
 
-    suButton.addEventListener('click', function(event) { // Use 'click' instead of 'on click'
+    signUpButton.addEventListener('click', () => {
+        container.classList.add('right-panel-active');
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove('right-panel-active');
+    });
+
+    signUpButton1.addEventListener('click', function(event) {
         event.preventDefault();
         const name = document.getElementById('signup-name').value;
         const email = document.getElementById('signup-email').value;
         const password = document.getElementById('signup-password').value;
+        const confirmPassword = document.getElementById('signup-confirm-password').value;
 
         // Client-side validation
-        if (!name || !email || !password) {
+        if (!name || !email || !password || !confirmPassword) {
             alert('Please fill in all fields');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
             return;
         }
 
         signupUser(name, email, password);
     });
 
-    siButton.addEventListener('click', function(event) {
+    signInButton1.addEventListener('click', function(event) {
         event.preventDefault();
-        
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
 
@@ -150,7 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please fill in all fields');
             return;
         }
-        loginUser( email, password);
+
+        loginUser(email, password);
     });
 
     function loginUser(email, password) {
@@ -165,14 +182,13 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => {
             if (response.ok) {
                 window.location.href = '/success.html';
-
             } else {
                 window.location.href = '/fail.html';
-
             }
         })
         .catch(error => {
             console.error('Error:', error);
+            window.location.href = '/fail.html';
         });
     }
 
@@ -187,13 +203,14 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             if (response.ok) {
-                window.location.href = '/success.html'; // Redirect to success page
+                window.location.href = '/success.html';
             } else {
                 window.location.href = '/fail.html';
             }
         })
         .catch(error => {
             console.error('Error:', error);
+            window.location.href = '/fail.html';
         });
     }
 });
