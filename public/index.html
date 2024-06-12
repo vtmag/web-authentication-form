@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Προσθήκη της βιβλιοθήκης Google Sign-In -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Καθορισμός των πληροφοριών της εφαρμογής σας -->
+    <meta name="google-signin-client_id" content="361186582256-rpi9f6lc1ngjduodaccge6drqn943apo.apps.googleusercontent.com">
+</head>
+<body>
+
+    <!-- <div class="language-switcher">
+        <button class="language-btn" data-lang="el">Ελληνικά</button>
+        <button class="language-btn" data-lang="en">English</button>
+    </div> -->
+    
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="signup-form" >
+                <h1 id="a">Create Account</h1>
+                <input type="text" placeholder="Name" id="signup-name"/>
+                <input type="email" placeholder="Email" id="signup-email" />
+                <input type="password" placeholder="Password" name="password" id="signup-password"  />
+                <input type="password" placeholder="Confirm password" name="confirn-password"/>
+                
+
+                <button class="su" id="first">Sign Up</button>
+                <div id="message-container"></div>
+
+<!-- 
+                <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form id="login-form">
+                <h1 id="a">Sign in</h1>
+                <input type="text" placeholder="Email" id="login-email" />
+                <input type="password" placeholder="Password" id="login-password"/>
+                <a href="forgot-password.html" id="forgot-password">Forgot your password?</a>
+                <button class="si" id="first">Sign In</button>
+                <div id="message-container"></div>
+
+                
+                
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p id="pid">To keep connected with us please login with your personal info!</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p id="pid">Enter your personal details and start journey with us!</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="copyright">
+        <p id="footerp">Copyright &copy; Magda 2024</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
